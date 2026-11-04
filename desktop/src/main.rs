@@ -122,7 +122,7 @@ fn draw_screen(emu: &Emu, canvas: &mut Canvas<Window>) {
     for (i, pixel) in screen_buf.iter().enumerate() {
         if *pixel {
             let x = (i % SCREEN_WIDTH) as u32;
-            let y = (i / SCREEN_HEIGHT) as u32;
+            let y = (i / SCREEN_WIDTH) as u32;
 
             let rect = Rect::new((x * SCALE) as i32, (y * SCALE) as i32, SCALE, SCALE);
             canvas.fill_rect(rect).unwrap();
